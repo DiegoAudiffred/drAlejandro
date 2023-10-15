@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<script>
+    var link = document.getElementById('my-link');
+    var link2 = document.getElementById('my-link2');
+    var link3 = document.getElementById('my-link3');
+
+    link.onclick = function () {
+        var reference = window.open(link.href, '_blank');
+        return false;
+    }
+
+    link2.onclick = function () {
+        var reference = window.open(link2.href, '_blank');
+        return false;
+    }
+    link3.onclick = function () {
+        var reference = window.open(link3.href, '_blank');
+        return false;
+    }
+</script>
