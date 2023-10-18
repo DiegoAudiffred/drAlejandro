@@ -11,6 +11,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db.models.deletion import CASCADE
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models import Q
+from django.forms import ImageField
 from django.utils import timezone
 
 
@@ -71,4 +72,10 @@ class User(AbstractUser):
 
 
 
-
+class Blog(models.Model):
+    user = models.ForeignKey(
+        User, on_delete = models.SET_NULL, null=True)
+    title = models.CharField(max_length=100)
+    publicationDate = models.DateTimeField(auto_now=True)
+    body = models.TextField()
+    url = models.ImageField(upload_to="uploads/gallery/")
