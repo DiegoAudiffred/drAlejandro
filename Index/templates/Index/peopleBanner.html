@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        {% for doc in doctors %}
+        <div class="col-6 border border-3 rounded rounded-3">
+            <div class="row shadow-lg">
+                <!-- Agregamos la clase "rounded" para aplicar border-radius -->
+                <div class="col-6 p-0 ">
+                    <img src="https://imgs.search.brave.com/BvZbYlPsdFLRmmHue5UwNvXzP-yROOn-tZkVfCJfADw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXM0LmFscGhhY29k/ZXJzLmNvbS8yMDYv/MjA2NTguanBn"
+                        class="rounded-start w-100" style="max-height: 300px;">
+                </div>
+                <div class="col-6 p-0 bg-white rounded-end ">
+                    <div class="row p-0 justify-content-center ">
+                        <div class="col-12 text-center">
+                            {{doc.name}}
+                        </div>
+                        <div class="col-12">
+                            {{doc.phone_number}}
+                        </div>
+                        <div class="col-12">
+                            {{doc.email}}
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-cuarto text-white ">Ver perfil completo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

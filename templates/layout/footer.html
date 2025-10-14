@@ -1,22 +1,43 @@
 {% load static %}
+<footer class="bg-primary text-center text-white">
+    <div class="container p-4 pb-0">
+        <section class="mb-4 social-icons">
+            <a class="btn btn-outline-light btn-floating m-1 border-0" href=" #!" role="button">
+                <img src="{% static 'img/fb2.png' %}" alt="">
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1 border-0" href=" #!" role="button">
+                <img src="{% static 'img/ig2.png' %}" alt="">
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1 border-0" href=" #!" role="button">
+                <img src="{% static 'img/ln2.png' %}" alt="">
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1 border-0" href=" #!" role="button">
+                <img src="{% static 'img/wp2.png' %}" alt="">
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1 border-0" href="#!" role="button">
+                <img src="{% static 'img/yt2.png' %}" alt="">
+            </a>
+        </section>
+    </div>
 
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2025 Copyright:
+        <a class="text-white text-decoration-none" href="#">Diego Audiffred</a>
+    </div>
+</footer>
 
-<script>
-    var link = document.getElementById('my-link');
-    var link2 = document.getElementById('my-link2');
-    var link3 = document.getElementById('my-link3');
-
-    link.onclick = function () {
-        var reference = window.open(link.href, '_blank');
-        return false;
+<style>
+    .social-icons img {
+        opacity: 0.6;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        width: 64px;
+        height: 64px;
+        border: 0;
+        text-decoration: none;
     }
 
-    link2.onclick = function () {
-        var reference = window.open(link2.href, '_blank');
-        return false;
+    .social-icons img:hover {
+        opacity: 1;
+        transform: scale(1.15);
     }
-    link3.onclick = function () {
-        var reference = window.open(link3.href, '_blank');
-        return false;
-    }
-</script>
+</style>
