@@ -10,6 +10,7 @@ urlpatterns = [
 
     path("",views.index,name='index'),
     path("contacto/",views.contactPage,name='contactPage'),
+    path('upload-info/', views.uploadInfo, name='uploadInfo'),
 
 
 ] 

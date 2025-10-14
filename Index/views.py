@@ -1,4 +1,5 @@
 from pyexpat.errors import messages
+from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from db.models import *
@@ -22,11 +23,21 @@ def peopleBanner(request):
     return render(request, 'Index/peopleBanner.html')
 
 def contactPage(request):
-    formContacto= ContactoForm()
-    return render(request, 'Index/contactPage.html',context={'formContacto':formContacto})
+    formContacto = ContactoForm()
+    return render(request, 'Index/contactPage.html', {'formContacto': formContacto})
 
-def uploadInfo():
-    pass
+
+def uploadInfo(request):
+    if request.method == 'POST':
+        formContacto = ContactoForm(request.POST, request.FILES)
+        if formContacto.is_valid():
+            formContacto.save()
+            return redirect('Index:contactPage')
+    else:
+        formContacto = ContactoForm()
+
+    return render(request, 'Index/contactPage.html', {'formContacto': formContacto})
+
 
 def sendMail():
     pass
