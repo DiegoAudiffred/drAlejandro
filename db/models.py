@@ -74,12 +74,20 @@ class Doctor(models.Model):
     phone_number = models.CharField("Teléfono", max_length=15, unique=True, null=True)
     email= models.EmailField('Correo electrónico', unique=True, blank=True, null=True)
     photo = models.ImageField(upload_to="uploads/gallery/",null=True, blank=True)
+    puesto = models.TextField('Puesto',max_length=20,null=True,blank=True)
 
     def __str__(self):
         return self.name
 
 class Contacto(models.Model):
-    name = models.CharField("Nombre", max_length=200, null=True, blank=True,unique=True)
-    phone_number = models.CharField("Teléfono", max_length=15, unique=True, null=True)
-    email= models.EmailField('Correo electrónico', unique=True, blank=True, null=True)
+    name = models.CharField("Nombre", max_length=200, null=True, blank=True,unique=False)
+    phone_number = models.CharField("Teléfono", max_length=15, unique=False, null=True)
+    email= models.EmailField('Correo electrónico', unique=False, blank=True, null=True)
     descripción = models.TextField('Descripcion',max_length=500,null=True,blank=True)
+
+class Service(models.Model):
+    name = models.CharField("Nombre", max_length=20, null=True, blank=True,unique=False)
+    descripction = models.CharField("Descripction", max_length=50, unique=False, null=True)
+    image1 = models.ImageField(upload_to="uploads/gallery/",null=True, blank=True)
+    image2 = models.ImageField(upload_to="uploads/gallery/",null=True, blank=True)
+    

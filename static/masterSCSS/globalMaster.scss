@@ -18,6 +18,7 @@
     src: url('../fonts/LTSuperior-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+
 }
 
 // Custom.scss
@@ -25,7 +26,7 @@
 //Colors
 $primary: #010C80;
 $secondary: #3E5CDB;
-$tercero: #3E5CDB;
+$tercero: #394b99;
 $cuarto: #6AA4EE;
 $quinto: #CFCFEA;
 $corporateNavyBlue900: #19263F;
@@ -135,9 +136,46 @@ $theme-colors: (
     font-family: 'LTSuperior', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 64px;
+    font-size: 20px;
     line-height: 20px;
 }
+
+.fnSuperiorRegularCard {
+    font-family: 'LTSuperior', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    line-height: 45px;
+    /* color principal de la letra */
+    text-shadow:
+        2px 0 0 black,
+        -2px 0 0 black,
+        0 2px 0 black,
+        0 -2px 0 black,
+        1px 2px black,
+        -1px 1px black,
+        1px -1px black,
+        -1px -1px black;
+}
+
+
+
+.fnSuperiorRegularTitle {
+    font-family: 'LTSuperior', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.fnSuperiorRegularTitle2 {
+    font-family: 'LTSuperior', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 60px;
+    line-height: 60px;
+}
+
 
 .fnSuperiorBold {
     font-family: 'LTSuperior', sans-serif;
@@ -357,7 +395,7 @@ input[type=number] {
     background-color: white !important;
 }
 
-$carousel-control-color: white;
+$carousel-control-color: white; //$primary;
 $carousel-indicator-width: 6px;
 $carousel-indicator-height: 6px;
 $carousel-indicator-opacity: 1;

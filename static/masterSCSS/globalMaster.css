@@ -26,8 +26,34 @@
   font-family: "LTSuperior", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 64px;
+  font-size: 20px;
   line-height: 20px;
+}
+
+.fnSuperiorRegularCard {
+  font-family: "LTSuperior", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 45px;
+  /* color principal de la letra */
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 2px black, -1px 1px black, 1px -1px black, -1px -1px black;
+}
+
+.fnSuperiorRegularTitle {
+  font-family: "LTSuperior", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+.fnSuperiorRegularTitle2 {
+  font-family: "LTSuperior", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+  line-height: 60px;
 }
 
 .fnSuperiorBold {
@@ -277,7 +303,7 @@ input[type=number] {
   --bs-gray-900: #212529;
   --bs-primary: #010C80;
   --bs-secondary: #3E5CDB;
-  --bs-tercero: #3E5CDB;
+  --bs-tercero: #394b99;
   --bs-cuarto: #6AA4EE;
   --bs-quinto: #CFCFEA;
   --bs-corporateNavyBlue800: #303C52;
@@ -325,7 +351,7 @@ input[type=number] {
   --bs-white: #FFFFFF;
   --bs-primary-rgb: 1, 12, 128;
   --bs-secondary-rgb: 62, 92, 219;
-  --bs-tercero-rgb: 62, 92, 219;
+  --bs-tercero-rgb: 57, 75, 153;
   --bs-cuarto-rgb: 106, 164, 238;
   --bs-quinto-rgb: 207, 207, 234;
   --bs-corporateNavyBlue800-rgb: 48, 60, 82;
@@ -3188,19 +3214,19 @@ textarea.form-control-lg {
 
 .btn-tercero {
   --bs-btn-color: #FFFFFF;
-  --bs-btn-bg: #3E5CDB;
-  --bs-btn-border-color: #3E5CDB;
+  --bs-btn-bg: #394b99;
+  --bs-btn-border-color: #394b99;
   --bs-btn-hover-color: #FFFFFF;
-  --bs-btn-hover-bg: rgb(52.7, 78.2, 186.15);
-  --bs-btn-hover-border-color: rgb(49.6, 73.6, 175.2);
-  --bs-btn-focus-shadow-rgb: 91, 116, 224;
+  --bs-btn-hover-bg: rgb(48.45, 63.75, 130.05);
+  --bs-btn-hover-border-color: rgb(45.6, 60, 122.4);
+  --bs-btn-focus-shadow-rgb: 87, 102, 168;
   --bs-btn-active-color: #FFFFFF;
-  --bs-btn-active-bg: rgb(49.6, 73.6, 175.2);
-  --bs-btn-active-border-color: rgb(46.5, 69, 164.25);
+  --bs-btn-active-bg: rgb(45.6, 60, 122.4);
+  --bs-btn-active-border-color: rgb(42.75, 56.25, 114.75);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #FFFFFF;
-  --bs-btn-disabled-bg: #3E5CDB;
-  --bs-btn-disabled-border-color: #3E5CDB;
+  --bs-btn-disabled-bg: #394b99;
+  --bs-btn-disabled-border-color: #394b99;
 }
 
 .btn-cuarto {
@@ -4003,19 +4029,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-tercero {
-  --bs-btn-color: #3E5CDB;
-  --bs-btn-border-color: #3E5CDB;
+  --bs-btn-color: #394b99;
+  --bs-btn-border-color: #394b99;
   --bs-btn-hover-color: #FFFFFF;
-  --bs-btn-hover-bg: #3E5CDB;
-  --bs-btn-hover-border-color: #3E5CDB;
-  --bs-btn-focus-shadow-rgb: 62, 92, 219;
+  --bs-btn-hover-bg: #394b99;
+  --bs-btn-hover-border-color: #394b99;
+  --bs-btn-focus-shadow-rgb: 57, 75, 153;
   --bs-btn-active-color: #FFFFFF;
-  --bs-btn-active-bg: #3E5CDB;
-  --bs-btn-active-border-color: #3E5CDB;
+  --bs-btn-active-bg: #394b99;
+  --bs-btn-active-border-color: #394b99;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #3E5CDB;
+  --bs-btn-disabled-color: #394b99;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #3E5CDB;
+  --bs-btn-disabled-border-color: #394b99;
   --bs-gradient: none;
 }
 
@@ -6341,12 +6367,12 @@ textarea.form-control-lg {
 }
 
 .alert-tercero {
-  --bs-alert-color: rgb(37.2, 55.2, 131.4);
-  --bs-alert-bg: rgb(216.4, 222.4, 247.8);
-  --bs-alert-border-color: rgb(197.1, 206.1, 244.2);
+  --bs-alert-color: rgb(34.2, 45, 91.8);
+  --bs-alert-bg: rgb(215.4, 219, 234.6);
+  --bs-alert-border-color: rgb(195.6, 201, 224.4);
 }
 .alert-tercero .alert-link {
-  color: rgb(29.76, 44.16, 105.12);
+  color: rgb(27.36, 36, 73.44);
 }
 
 .alert-cuarto {
@@ -7075,17 +7101,17 @@ textarea.form-control-lg {
 }
 
 .list-group-item-tercero {
-  color: rgb(37.2, 55.2, 131.4);
-  background-color: rgb(216.4, 222.4, 247.8);
+  color: rgb(34.2, 45, 91.8);
+  background-color: rgb(215.4, 219, 234.6);
 }
 .list-group-item-tercero.list-group-item-action:hover, .list-group-item-tercero.list-group-item-action:focus {
-  color: rgb(37.2, 55.2, 131.4);
-  background-color: rgb(194.76, 200.16, 223.02);
+  color: rgb(34.2, 45, 91.8);
+  background-color: rgb(193.86, 197.1, 211.14);
 }
 .list-group-item-tercero.list-group-item-action.active {
   color: #FFFFFF;
-  background-color: rgb(37.2, 55.2, 131.4);
-  border-color: rgb(37.2, 55.2, 131.4);
+  background-color: rgb(34.2, 45, 91.8);
+  border-color: rgb(34.2, 45, 91.8);
 }
 
 .list-group-item-cuarto {
@@ -8459,7 +8485,7 @@ textarea.form-control-lg {
   text-align: center;
   background: none;
   border: 0;
-  opacity: 0.5;
+  opacity: 1;
   transition: opacity 0.15s ease;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -9201,7 +9227,7 @@ textarea.form-control-lg {
 
 .text-bg-tercero {
   color: #FFFFFF !important;
-  background-color: RGBA(62, 92, 219, var(--bs-bg-opacity, 1)) !important;
+  background-color: RGBA(57, 75, 153, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-cuarto {
@@ -9444,10 +9470,10 @@ textarea.form-control-lg {
 }
 
 .link-tercero {
-  color: #3E5CDB !important;
+  color: #394b99 !important;
 }
 .link-tercero:hover, .link-tercero:focus {
-  color: rgb(49.6, 73.6, 175.2) !important;
+  color: rgb(45.6, 60, 122.4) !important;
 }
 
 .link-cuarto {

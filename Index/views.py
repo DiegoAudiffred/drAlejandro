@@ -11,8 +11,10 @@ from Index.forms import *
 
 def index(request):
     doctors = Doctor.objects.all()
+    services = Service.objects.all()
     context = {
         'doctors': doctors,
+        'services':services,
         
     }
     print(doctors)
@@ -25,6 +27,10 @@ def peopleBanner(request):
 def contactPage(request):
     formContacto = ContactoForm()
     return render(request, 'Index/contactPage.html', {'formContacto': formContacto})
+
+def serviciosPage(request):
+    servicios = Service.objects.all()
+    return render(request, 'Index/serviciosPage.html', {'servicios': servicios})
 
 
 def uploadInfo(request):
@@ -40,4 +46,7 @@ def uploadInfo(request):
 
 
 def sendMail():
+    pass
+
+def iniciarsesion():
     pass

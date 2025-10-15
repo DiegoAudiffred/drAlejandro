@@ -11,6 +11,8 @@ urlpatterns = [
     path("",views.index,name='index'),
     path("contacto/",views.contactPage,name='contactPage'),
     path('upload-info/', views.uploadInfo, name='uploadInfo'),
+    path('iniciarsesion/', views.iniciarsesion, name='iniciarsesion'),
+    path('servicios/', views.serviciosPage, name='serviciosPage'),
 
 
 ] 
