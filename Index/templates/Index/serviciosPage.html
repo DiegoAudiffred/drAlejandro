@@ -1,105 +1,133 @@
 {% extends 'layout/layout.html' %}
 {% load static %}
 {% block body %}
-
 <style>
-    .mapa-container {
-        border-radius: 12px;
+    @import url('https://fonts.googleapis.com/css?family=Raleway:400,200');
+
+    .transition {
+        transition: .3s cubic-bezier(.3, 0, 0, 1.3);
+    }
+
+    .card {
+        position: relative;
+        background-color: #fff;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+        height: 300px;
+        width: 100%;
+        max-width: 300px;
+        margin: 2rem auto;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-        transition: all 0.3s ease;
+        border-radius: 10px;
+    }
 
-        iframe {
-            border: none;
-            filter: grayscale(20%) contrast(105%);
-            transition: filter 0.3s ease;
-        }
+    .card:hover {
+        height: 450px;
+    }
 
-        &:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    .card_circle {
+        background: url('https://picsum.photos/400/200') no-repeat center bottom;
+        background-color: #3487f7;
+        background-size: cover;
+        border-radius: 50%;
+        height: 400px;
+        width: 450px;
+        position: absolute;
+        top: -270px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 0.3s cubic-bezier(.3, 0, 0, 1.3);
+    }
 
-            iframe {
-                filter: grayscale(0%) contrast(110%);
-            }
-        }
+    .card:hover .card_circle {
+        border-radius: 0;
+        margin-top: -130px;
+    }
+
+    h2 {
+        color: #3487f7;
+        font-family: 'Raleway', sans-serif;
+        font-size: 24px;
+        font-weight: 200;
+        text-align: center;
+        width: 100%;
+        margin-top: 150px;
+        transition: all 0.3s cubic-bezier(.3, 0, 0, 1.3);
+    }
+
+    .card:hover h2 {
+        background: #3487f7;
+        color: #fff;
+        margin-top: 100px;
+        padding: 5px;
+    }
+
+    p {
+        color: rgba(0, 0, 0, .6);
+        font-family: 'Raleway', sans-serif;
+        font-size: 100%;
+        font-weight: normal;
+        text-align: center;
+        margin-top: 200px;
+        padding: 0 10px;
+        transition: all 0.3s cubic-bezier(.3, 0, 0, 1.3);
+    }
+
+    .card:hover p {
+        margin-top: 300px;
+    }
+
+    .cta-container {
+        display: none;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .card:hover .cta-container {
+        display: block;
+    }
+
+    .cta {
+        border: 2px solid #3487f7;
+        color: #3487f7;
+        font-family: 'Raleway', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 0.5rem 2rem;
+        border-radius: 2px;
+        text-decoration: none;
+        transition: 0.2s ease-out;
+    }
+
+    .cta:hover {
+        background-color: #3487f7;
+        color: #fff;
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 </style>
-<div class="container">
-    <div class="row  my-5 py-3">
 
-        <div class="col-12 col-md-6 mapa-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.7445161565297!2d-98.21647042417086!3d19.03097635338329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0c9b73d73a7%3A0x14b820742b9cfdf7!2sUNI%C3%93N%20DE%20CR%C3%89DITO%20GENERAL!5e0!3m2!1ses-419!2smx!4v1760474734309!5m2!1ses-419!2smx"
-                class="w-100" style="height: 400px; max-height: 400px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-
-        <div class="col-12 col-md-6"> <!-- Info -->
-            <div class="mb-3">
-                <h2>Ponte en contacto con nosotros</h2>
-            </div>
-            <form method="post" action="{% url 'Index:uploadInfo' %}">
-                {% csrf_token %}
-                <div class="mb-3">
-                    {{ formContacto.name.label_tag }}
-                    {{ formContacto.name }}
-                    {% if formContacto.name.errors %}
-                    <div class="text-danger">{{ formContacto.name.errors }}</div>
-                    {% endif %}
-                </div>
-
-                <div class="mb-3">
-                    {{ formContacto.phone_number.label_tag }}
-                    {{ formContacto.phone_number }}
-                    {% if formContacto.phone_number.errors %}
-                    <div class="text-danger">{{ formContacto.phone_number.errors }}</div>
-                    {% endif %}
-                </div>
-
-                <div class="mb-3">
-                    {{ formContacto.email.label_tag }}
-                    {{ formContacto.email }}
-                    {% if formContacto.email.errors %}
-                    <div class="text-danger">{{ formContacto.email.errors }}</div>
-                    {% endif %}
-                </div>
-
-                <div class="mb-3">
-                    {{ formContacto.descripción.label_tag }}
-                    {{ formContacto.descripción }}
-                    {% if formContacto.descripción.errors %}
-                    <div class="text-danger">{{ formContacto.descripción.errors }}</div>
-                    {% endif %}
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
-            </form>
-
-        </div>
-
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h1 class="fnSuperiorRegularTitle2 text-tercero">Conoce nuestros servicios</h1>
     </div>
-    <div class="row my-4">
-        <div class="col-6 col-md-3 text-center">
-            <img src="{% static 'img/phone.png' %}" alt="">
-            <div>Llamanos +52 951 242 6540</div>
-        </div>
-        <div class="col-6 col-md-3 text-center">
-            <img src="{% static 'img/wpp.png' %}" alt="">
 
-            <div>WhatsApp esta abajo no mames</div>
+    <div class="row justify-content-center">
+        {% for ser in servicios %}
+        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="card transition">
+                <div class="card_circle transition" style="background-image: url('{{ ser.image.url }}');"></div>
+                <h2 class="transition">{{ ser.name }}</h2>
+                <p>{{ ser.descripction }}</p>
+                <div class="cta-container transition">
+                    <a href="#" class="cta">Ver más</a>
+                </div>
+            </div>
         </div>
-        <div class="col-6 col-md-3 text-center">
-            <img src="{% static 'img/men.png' %}" alt="">
-
-            <div>Visitanos en: Calle inventada claramente real no fake </div>
-        </div>
-        <div class="col-6 col-md-3 text-center">
-            <img src="{% static 'img/mail.png' %}" alt="">
-            <div>Manda correo a sexooooooo@gmail.com</div>
-        </div>
+        {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}

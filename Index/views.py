@@ -11,7 +11,7 @@ from Index.forms import *
 
 def index(request):
     doctors = Doctor.objects.all()
-    services = Service.objects.all()
+    services = Service.objects.all()[:6]
     context = {
         'doctors': doctors,
         'services':services,
