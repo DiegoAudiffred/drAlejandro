@@ -1,55 +1,27 @@
 <style>
-    /* Solo lo necesario para el flip */
-    .card-inner {
-        position: relative;
-        width: 100%;
-        padding-top: 125%;
-        /* relación 4:5 */
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-    }
-
-    .card:hover .card-inner {
-        transform: rotateY(180deg);
-    }
-
-    .card-front,
-    .card-back {
-        position: absolute;
-        inset: 0;
-        backface-visibility: hidden;
-        border-radius: 0.5rem;
-        overflow: hidden;
-    }
-
-    .card-back {
-        transform: rotateY(180deg);
-    }
-
-    /* Botones fuera del carrusel */
+    /* Botones del carrusel fuera del contenedor */
     .carousel-control-prev,
     .carousel-control-next {
-        position: absolute;
         top: 50%;
         transform: translateY(-50%);
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        z-index: 10;
-        background: #010C80;
-        /* sin fondo extra */
+        background-color: #010C80;
         border: none;
-        padding: 0;
     }
 
     .carousel-control-prev {
         left: -70px;
-        /* afuera a la izquierda */
     }
 
     .carousel-control-next {
         right: -70px;
-        /* afuera a la derecha */
+    }
+
+    .card-img-top {
+        height: 300px;
+        object-fit: fill;
     }
 </style>
 
@@ -72,23 +44,12 @@
                 <div class="row justify-content-center">
                     {% endif %}
 
-                    <div class="col-6 col-md-4 mb-4 d-flex justify-content-center">
-                        <div class="card w-100" style="perspective:1000px; cursor:pointer;">
-                            <div class="card-inner">
-                                <div class="card-front">
-                                    <img src="{{ doc.image1.url }}" class="w-100 h-100 object-fit-cover">
-                                    <div
-                                        class="position-absolute top-50 start-50 translate-middle w-100 text-center py-2 fnSuperiorRegularCard text-secondary">
-                                        {{ doc.name }}
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <img src="{{ doc.image2.url }}" class="w-100 h-100 object-fit-cover">
-                                    <div
-                                        class="position-absolute top-50 start-50 translate-middle text-center px-2 fnSuperiorRegularCard text-secondary">
-                                        {{ doc.descripction }}
-                                    </div>
-                                </div>
+                    <div class="col-6 col-md-4 mb-4 d-flex">
+                        <div class="card w-100">
+                            <img src="{{ doc.image1.url }}" class="card-img-top" alt="{{ doc.name }}">
+                            <div class="card-body text-center bg-primary text-white">
+                                <h5 class="card-title mb-1">{{ doc.name }}</h5>
+                                <p class="card-text small">{{ doc.descripction }}</p>
                             </div>
                         </div>
                     </div>
@@ -111,17 +72,3 @@
         </button>
     </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.querySelector('.card-inner').style.transform = 'rotateY(180deg)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.querySelector('.card-inner').style.transform = 'rotateY(0deg)';
-            });
-        });
-    });
-</script>
